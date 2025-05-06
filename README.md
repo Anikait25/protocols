@@ -1,52 +1,92 @@
-# I2C Master-Slave Communication System (Verilog)
+# Serial Communication Protocols
 
-This repository contains a Verilog implementation of a simple I2C (Inter-Integrated Circuit) communication system. The project includes the core I2C master-slave peripheral, clock divider, and a testbench for simulation.
+This repository provides an overview and implementation examples of popular **Serial Communication Protocols** used in embedded systems and digital electronics.
 
-## Files Overview
+---
 
-- `I2C_clk_divider.v`:  
-  Implements a clock divider module to generate a slower clock signal (SCL) for I2C communication.
+## 📦 Protocols Covered
 
-- `I2C_peripheral.v`:  
-  Represents the I2C slave peripheral logic. It handles receiving and responding to signals from the master.
+- **UART (Universal Asynchronous Receiver Transmitter)**
+- **SPI (Serial Peripheral Interface)**
+- **I2C (Inter-Integrated Circuit)**
 
-- `I2C_revised_step1.v`:  
-  Contains the I2C master logic that initiates communication with the slave using start/stop conditions and data transmission.
+Each protocol includes:
+- Block and timing diagrams  
+- Verilog or C implementations  
+- Simulation testbenches  
+- Notes on hardware interfacing (optional)
 
-- `I2C_revised_step1_tb.v`:  
-  Testbench for simulating the I2C master and slave interaction. Verifies data transfer and control signaling using ModelSim or any Verilog simulator.
+---
 
-## Features
+## 🔧 Folder Structure
 
-- Simulates a basic I2C protocol interface using Verilog.
-- Custom clock division for generating the I2C clock.
-- Start, Stop, Read, Write operations included.
-- Testbench validates core functionality.
+<pre>
+serial-communication-protocols/
+├── uart/
+│   ├── uart_tx.v
+│   ├── uart_rx.v
+│   ├── testbench/
+│   └── README.md
+├── spi/
+│   ├── spi_master.v
+│   ├── spi_slave.v
+│   ├── testbench/
+│   └── README.md
+├── i2c/
+│   ├── i2c_master.v
+│   ├── i2c_slave.v
+│   ├── testbench/
+│   └── README.md
+└── docs/
+    ├── diagrams/
+    ├── timing/
+    └── datasheets/
+</pre>
 
-## How to Run
+---
 
-1. **Simulation:**
-   - Use [ModelSim](https://www.intel.com/content/www/us/en/software/programmable/quartus-prime/model-sim.html) or any other Verilog simulator.
-   - Compile all `.v` files including the testbench:
-     ```bash
-     vlog I2C_clk_divider.v I2C_peripheral.v I2C_revised_step1.v I2C_revised_step1_tb.v
-     vsim work.I2C_revised_step1_tb
-     ```
-   - Run the simulation and inspect waveforms to verify proper I2C behavior.
+## 💡 Key Concepts
 
-2. **FPGA Synthesis (Optional):**
-   - Can be synthesized using Intel Quartus Prime Lite for FPGAs like Intel MAX10 (10M50DAF484C7G).
+### UART
+- Asynchronous protocol
+- Uses start/stop bits
+- No clock line required
 
-## Project Requirements
+### SPI
+- Synchronous protocol
+- Full-duplex communication
+- Uses MISO, MOSI, SCLK, and SS lines
 
-- Verilog HDL
-- ModelSim / QuestaSim for simulation
-- (Optional) Intel Quartus Prime Lite for FPGA deployment
+### I2C
+- Synchronous, half-duplex
+- Uses SDA (data) and SCL (clock)
+- Supports multi-master and multi-slave
 
+---
 
-## License
+## 🧪 Simulation & Testing
 
-This project is open-source and available under the [MIT License](LICENSE).
+- Simulated using **ModelSim** and **Quartus Prime**
+- Testbenches provided
+- Functional and timing verification
+
+---
+
+## 📁 Requirements
+
+- Verilog/SystemVerilog support  
+- Intel Quartus Prime (Lite or Standard)  
+- ModelSim or compatible simulator  
+- (Optional) FPGA development board
+
+---
+
+## 🛠️ Setup
+
+```bash
+git clone https://github.com/your-username/serial-communication-protocols.git
+cd serial-communication-protocols
+```
 
 ## Author
 
