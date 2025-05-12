@@ -11,7 +11,6 @@ This repository provides an overview and implementation examples of popular **Se
 - **I2C (Inter-Integrated Circuit)**
 
 Each protocol includes:
-- Block and timing diagrams  
 - Verilog or C implementations  
 - Simulation testbenches  
 - Notes on hardware interfacing (optional)
